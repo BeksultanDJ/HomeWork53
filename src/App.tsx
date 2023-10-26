@@ -5,13 +5,17 @@ import './App.css';
 
 function App() {
     const [tasks, setTasks] = useState([
-        { id: '1', text: 'Fix a sink' },
-        { id: '2', text: 'Pay fo bills' },
+        { id: getRandomId(), text: 'Fix a sink' },
+        { id: getRandomId(), text: 'Pay for bills' },
     ]);
+
+    function getRandomId() {
+        return Math.random().toString(36).substr(2, 9);
+    }
 
     const addTask = (text) => {
         const newTask = {
-            id: new Date().getTime().toString(),
+            id: getRandomId(),
             text,
         };
         setTasks([...tasks, newTask]);
