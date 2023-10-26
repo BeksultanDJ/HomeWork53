@@ -16,6 +16,7 @@ function AddTaskForm({ onAdd }) {
 
     return (
         <div className="text-area">
+            <h2>ToDo List</h2>
       <textarea
           value={taskText}
           onChange={handleTextareaChange}
